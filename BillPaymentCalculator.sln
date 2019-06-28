@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillPaymentCalculator", "BillPaymentCalculator\BillPaymentCalculator.csproj", "{0855B0E0-C39A-40BF-A3C9-BEBB77AE2BD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillPaymentCalculator.DataAccess", "BillPaymentCalculator.DataAccess\BillPaymentCalculator.DataAccess.csproj", "{EBAF6BE6-6F53-4BDA-B222-BC3B732D4C99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillPaymnetCalculator.Buisness", "BillPaymnetCalculator.Buisness\BillPaymnetCalculator.Buisness.csproj", "{9E313B35-1A2F-4178-AB4D-2CEFA26434CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{0855B0E0-C39A-40BF-A3C9-BEBB77AE2BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0855B0E0-C39A-40BF-A3C9-BEBB77AE2BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0855B0E0-C39A-40BF-A3C9-BEBB77AE2BD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBAF6BE6-6F53-4BDA-B222-BC3B732D4C99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBAF6BE6-6F53-4BDA-B222-BC3B732D4C99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBAF6BE6-6F53-4BDA-B222-BC3B732D4C99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBAF6BE6-6F53-4BDA-B222-BC3B732D4C99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E313B35-1A2F-4178-AB4D-2CEFA26434CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E313B35-1A2F-4178-AB4D-2CEFA26434CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E313B35-1A2F-4178-AB4D-2CEFA26434CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E313B35-1A2F-4178-AB4D-2CEFA26434CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
