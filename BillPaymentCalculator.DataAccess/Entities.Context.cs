@@ -18,7 +18,7 @@ namespace BillPaymentCalculator.DataAccess
     public partial class BillPaymentCalculatorEntities : DbContext
     {
         public BillPaymentCalculatorEntities()
-            : base("name=BillPaymentCalculatorEntities")
+            : base("BillPaymentCalculatorEntities")
         {
         }
     
