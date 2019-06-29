@@ -6,7 +6,7 @@ namespace BillPaymnetCalculator.Buisness
     {
         public void SaveBusinessName(string name)
         {
-            Connection conn = new Connection();
+            StoredProcedureAccess conn = new StoredProcedureAccess();
             conn.SaveBusinessName(name);
         }
         

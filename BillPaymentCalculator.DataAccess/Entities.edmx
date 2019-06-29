@@ -4,19 +4,26 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BillPaymentCalculatorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BillPaymentCalculatorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <Function Name="insBuisnessNames" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="BuisnessName" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="insMonthlyPaymentAmounts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PaymentAmount" Type="decimal" Mode="In" />
+          <Parameter Name="IsActive" Type="bit" Mode="In" />
+        </Function>
         <EntityContainer Name="BillPaymentCalculatorModelStoreContainer" />
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BillPaymentCalculatorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="BillPaymentCalculatorEntities" annotation:LazyLoadingEnabled="true" >
           <FunctionImport Name="insBuisnessNames">
-            <Parameter Name="BuisnessName" Mode="In" Type="String" />
+          <Parameter Name="BuisnessName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="insMonthlyPaymentAmounts">
+            <Parameter Name="PaymentAmount" Mode="In" Type="Decimal" />
+            <Parameter Name="IsActive" Mode="In" Type="Boolean" />
           </FunctionImport>
         </EntityContainer>
       </Schema>
@@ -26,6 +33,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="BillPaymentCalculatorModelStoreContainer" CdmEntityContainer="BillPaymentCalculatorEntities" >
           <FunctionImportMapping FunctionImportName="insBuisnessNames" FunctionName="BillPaymentCalculatorModel.Store.insBuisnessNames" />
+          <FunctionImportMapping FunctionImportName="insMonthlyPaymentAmounts" FunctionName="BillPaymentCalculatorModel.Store.insMonthlyPaymentAmounts" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

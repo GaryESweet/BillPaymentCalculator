@@ -7,30 +7,46 @@ namespace BillPaymentCalculator
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            BusinessName.Text = "Save Name";
+            ClearInput();
         }
 
-        private void SaveBusinessName(string name)
+        private void SaveBusinessName()
         {
+            string name = BusinessNameInput.Value;        
+            
             BusinessNames saveName = new BusinessNames();
-            saveName.SaveBusinessName(name);
+            saveName.SaveBusinessName(name);            
         }
 
         protected void BusinessName_Click(object sender, EventArgs e)
         {
-            string name = BusinessNameInput.Value;
-            SaveBusinessName(name);
-            ClearInput();
+            SaveBusinessName();
         }
 
         private void ClearInput()
         {
             BusinessNameInput.Value = string.Empty;
+            MonthlyPaymentInput.Value = string.Empty;
         }
 
         protected void btnMonthlyPayment_Click(object sender, EventArgs e)
         {
+            SaveMonthlyPayment();
+        }
 
+        private void SaveMonthlyPayment()
+        {
+            //Call Business SaveMonthlyPayment
+            string monthlyPayment = MonthlyPaymentInput.Value;
+            bool isDecimal = decimal.TryParse(monthlyPayment, out decimal payment);
+            if (isDecimal)
+            {
+                SaveMonthlyPayment();
+            }
+            else
+            {
+                //Error Message to User
+            }
         }
     }
 }
