@@ -95,6 +95,12 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BillPaymnetCalculator.Buisness\BillPaymentCalculator.Business.csproj">
+      <Project>{9e313b35-1a2f-4178-ab4d-2cefa26434cf}</Project>
+      <Name>BillPaymentCalculator.Business</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
