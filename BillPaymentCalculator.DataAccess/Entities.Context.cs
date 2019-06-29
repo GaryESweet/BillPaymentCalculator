@@ -18,7 +18,7 @@ namespace BillPaymentCalculator.DataAccess
     public partial class BillPaymentCalculatorEntities : DbContext
     {
         public BillPaymentCalculatorEntities()
-            : base("BillPaymentCalculatorEntities")
+            : base("name=BillPaymentCalculatorEntities")
         {
         }
     
@@ -35,6 +35,19 @@ namespace BillPaymentCalculator.DataAccess
                 new ObjectParameter("BuisnessName", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insBuisnessNames", buisnessNameParameter);
+        }
+    
+        public virtual int insMonthlyPaymentAmounts(Nullable<decimal> paymentAmount, Nullable<bool> isActive)
+        {
+            var paymentAmountParameter = paymentAmount.HasValue ?
+                new ObjectParameter("PaymentAmount", paymentAmount) :
+                new ObjectParameter("PaymentAmount", typeof(decimal));
+    
+            var isActiveParameter = isActive.HasValue ?
+                new ObjectParameter("IsActive", isActive) :
+                new ObjectParameter("IsActive", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("insMonthlyPaymentAmounts", paymentAmountParameter, isActiveParameter);
         }
     }
 }
